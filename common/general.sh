@@ -1,11 +1,11 @@
 #!/bin/bash
 
-source $PWD/common/path.sh
-source $PWD/common/autocomplete.sh
-source $PWD/common/alias.sh
-source $PWD/common/ps1.sh
-source $PWD/common/functions.sh
-source $PWD/common/git.sh
+source $ZSHENV/common/path.sh
+source $ZSHENV/common/autocomplete.sh
+source $ZSHENV/common/alias.sh
+source $ZSHENV/common/ps1.sh
+source $ZSHENV/common/functions.sh
+source $ZSHENV/common/git.sh
 
 
 # Programs

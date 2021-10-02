@@ -23,7 +23,7 @@ kns() {
 }
 ktx() {
   export CLUSTER=$1
-  source $PWD/work.sh
+  source $ZSHENV/work.sh
 }
 ke(){
   k exec -it $1 $2 $3 -- bash

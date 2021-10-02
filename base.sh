@@ -1,5 +1,5 @@
 #!/bin/bash
-
+export ZSHENV=~/Development/Repos/home/zsh-env
 # ------------------------- ENVIRONMENT ----------------------------
 if [ -z "$PROFILE" ]; then
     export PROFILE=work
@@ -13,13 +13,13 @@ fi
 echo "Profile: $PROFILE; Project: $PROJECT; Env: $ENV; K8s Cluster: $CLUSTER"
 
 # ------------------------- GENERAL ---------------------------------
-source $PWD/common/general.sh
+source $ZSHENV/common/general.sh
 
 # -------------------- Home Development Environment ----------------
 if [ $PROFILE = "home" ]; then
-    source $PWD/home.sh
+    source $ZSHENV/home.sh
 fi
 # -------------------- Work Development Environment -----------------
 if [ $PROFILE = "work" ]; then
-    source $PWD/work.sh
+    source $ZSHENV/work.sh
 fi

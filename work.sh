@@ -21,7 +21,7 @@ k8s["ci"]="kubeconfig--eureka--ci.yaml"
 k8s["trial-1"]="kubeconfig--eureka--trial-1.yaml"
 k8s["prod"]="kubeconfig--eureka--prod.yaml"
 
-export KUBECONFIG=$PWD/secret/kubeconfigs/${k8s["$CLUSTER"]}
+export KUBECONFIG=$ZSHENV/secret/kubeconfigs/${k8s["$CLUSTER"]}
 
 
 export TARGET_CLUSTER_KUBE_CONFIG=$KUBECONFIG
