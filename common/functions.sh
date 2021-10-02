@@ -49,10 +49,6 @@ b64dec() {
   echo -n $1 | base64 -d
 }
 
-cloud_sql_proxy() {
-  ~/Software/cloud_sql_proxy "$@"
-}
-
 kpod() {
   kubectl get pod -l app=$1 -o jsonpath="{.items[0].metadata.name}"
 }
