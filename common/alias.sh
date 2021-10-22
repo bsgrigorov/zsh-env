@@ -30,3 +30,4 @@ alias is="istioctl"
 alias hs='history | grep'
 alias kc='kubecolor'
 alias gc='gcmsg'
+alias kd='kubectl describe'

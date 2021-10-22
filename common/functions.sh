@@ -43,10 +43,10 @@ seal(){
 }
 
 b64enc() {
-  echo -n $1 | base64 
+  echo -n "$1" | base64 
 }
 b64dec() {
-  echo -n $1 | base64 -d
+  echo $1 | base64 -d 
 }
 
 kpod() {

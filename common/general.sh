@@ -22,3 +22,4 @@ ln -sfn ~/Development/Repos/home/BrewUp/brewup.sh /usr/local/bin/brewup
 # git user global config settings
 export GIT_USER_NAME=Borislav Grigorov
 
+PROMPT_EOL_MARK='' # removes % sign from output of commands https://unix.stackexchange.com/questions/167582/why-zsh-ends-a-line-with-a-highlighted-percent-symbol 
