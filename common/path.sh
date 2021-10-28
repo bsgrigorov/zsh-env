@@ -10,3 +10,4 @@ export PATH=$PATH:/usr/local/bin/aws_completer
 export PATH="/usr/local/opt/helm@2/bin:$PATH"
 export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
 export PATH="/usr/local/opt/yq@3/bin:$PATH"
+export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
