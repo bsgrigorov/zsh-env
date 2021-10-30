@@ -21,6 +21,17 @@ k8s["ci"]="kubeconfig--eureka--ci.yaml"
 k8s["trial-1"]="kubeconfig--eureka--trial-1.yaml"
 k8s["prod"]="kubeconfig--eureka--prod.yaml"
 
+
+k8s["cic-dev1"]="kubeconfig--ede--cic-dev1.yaml"
+k8s[""]=".yaml"
+k8s[""]=".yaml"
+k8s[""]=".yaml"
+k8s[""]=".yaml"
+k8s[""]=".yaml"
+k8s[""]=".yaml"
+k8s[""]=".yaml"
+k8s[""]=".yaml"
+
 export KUBECONFIG=$ZSHENV/secret/kubeconfigs/${k8s["$CLUSTER"]}
 
 
