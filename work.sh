@@ -23,6 +23,7 @@ k8s["prod"]="kubeconfig--eureka--prod.yaml"
 
 
 k8s["cic-dev1"]="kubeconfig--ede--cic-dev1.yaml"
+k8s["cic-dev2"]="kubeconfig--ede--cic-dev2.yaml"
 k8s[""]=".yaml"
 k8s[""]=".yaml"
 k8s[""]=".yaml"
