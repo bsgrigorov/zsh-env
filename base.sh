@@ -18,8 +18,10 @@ source $ZSHENV/common/general.sh
 # -------------------- Home Development Environment ----------------
 if [ $PROFILE = "home" ]; then
     source $ZSHENV/home.sh
+    source $ZSHENV/secret/home.sh
 fi
 # -------------------- Work Development Environment -----------------
 if [ $PROFILE = "work" ]; then
     source $ZSHENV/work.sh
+    source $ZSHENV/secret/work.sh
 fi
