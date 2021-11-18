@@ -3,8 +3,16 @@ source "/usr/local/opt/kube-ps1/share/kube-ps1.sh"
 # export PS1="\[\033[36m\]\u:\[\033[33;1m\]\w\[\033[m\]\$ "
 
 
+# parse_git_branch() {
+#   git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+# }
+
 parse_git_branch() {
-  git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+  git -C . rev-parse 2>/dev/null
+  git_repo=$?
+  if [ "$git_repo" = 0 ]; then
+    echo "($(git rev-parse --abbrev-ref HEAD 2>/dev/null))"
+  fi
 }
 
 # parse_git_files_diff() {
@@ -15,7 +23,7 @@ parse_git_branch() {
 NEWLINE=$'\n'
 export PS1="%F{yellow}%~%f"
 export PS1='$(kube_ps1):${NEWLINE}'$PS1
-export PS1=$PS1"%F{green}\$(parse_git_branch)%f${NEWLINE}\$ "
+export PS1=$PS1"%F{green} \$(parse_git_branch)%f${NEWLINE}\$ "
 export RPROMPT="%F{250}%*%f"
 # export PROMPT=$PS1"\[\033[32m\]\$(parse_git_branch)\[\033[00m\]\n\$ "
 
