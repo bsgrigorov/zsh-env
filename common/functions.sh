@@ -12,19 +12,6 @@ docker_rm_stopped() {
 ka(){
   k apply -f $1
 }
-kns() {
-  if [ -z "$1" ]; then
-    # kubectl get sa default -o jsonpath='{.metadata.namespace}'
-    kubectl get ns
-    echo
-  else
-    kubectl config set-context --current --namespace $1
-  fi
-}
-ktx() {
-  export CLUSTER=$1
-  source $ZSHENV/work.sh
-}
 ke(){
   k exec -it $1 $2 $3 -- bash
 }

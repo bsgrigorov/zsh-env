@@ -6,6 +6,7 @@ source $ZSHENV/common/alias.sh
 source $ZSHENV/common/ps1.sh
 source $ZSHENV/common/functions.sh
 source $ZSHENV/common/git.sh
+source $ZSHENV/common/k8s.sh
 
 
 # Programs
