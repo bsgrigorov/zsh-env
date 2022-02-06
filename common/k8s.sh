@@ -6,13 +6,13 @@ then
   export KUBECONFIG="$DEFAULT_KUBE_CONTEXTS"
 fi
 
-# Additional contexts to be added
+# Additional contexts to be added in a folder
 CUSTOM_KUBE_CONTEXTS="$ZSHENV/secret/kubeconfigs"
 mkdir -p "${CUSTOM_KUBE_CONTEXTS}"
 
 OIFS="$IFS"
 IFS=$'\n'
-for contextFile in `find "${CUSTOM_KUBE_CONTEXTS}" -type f -name "*.yaml"`  
+for contextFile in `find "${CUSTOM_KUBE_CONTEXTS}" -type f -name "*.yaml"`
 do
   chmod 600 $contextFile
   export KUBECONFIG="$contextFile:$KUBECONFIG"
@@ -32,26 +32,6 @@ current-context: ""
 EOF
 
 
-ct() {
-  kubectx $*
-  kubectl --context="$(kubectl --kubeconfig $KUBECTXTTYCONFIG config current-context)" config view --raw --minify -o json | jq 'del(.users,.clusters)' >$KUBECTXTTYCONFIG
-}
-
-_fzf_complete_ct() {
-  _fzf_complete "+m --ansi --no-preview" "$@" < <(
-    KUBECTX_IGNORE_FZF=true kubectx
-  )
-}
-
-# alias ns="kubens"
-
-_fzf_complete_ns() {
-  _fzf_complete "+m --ansi --no-preview" "$@" < <(
-    KUBECTX_IGNORE_FZF=true kubens
-  )
-}
-
-
 # Required to speed up namespace setup. Lookups are not required
 kns() {
   if [ -z "$1" ]; then
@@ -61,6 +41,35 @@ kns() {
   else
     kubectl config set-context --current --namespace $1
   fi
+}
+
+kt() {
+
+  OIFS="$IFS"
+  IFS=$'*'
+
+  ARG_STR="*$**"
+
+  FILTERED_CONTEXTS=$(find ${CUSTOM_KUBE_CONTEXTS} -type f -name ${ARG_STR} | paste -sd ":" -)
+
+  DEFAULT_KUBECONFIG=$KUBECONFIG
+  KUBECONFIG=$FILTERED_CONTEXTS
+
+  IFS="$OIFS"
+  local choice
+
+  FILTERED_CONTEXT_NAMES=$(k config get-contexts -o name)
+  if [[ $FILTERED_CONTEXT_NAMES == *$'\n'* ]]; then
+    kubectx
+    CURRENT_CONTEXT=$(k config current-context)
+    KUBECONFIG=$DEFAULT_KUBECONFIG
+
+    kubectx $CURRENT_CONTEXT > /dev/null
+  else
+    KUBECONFIG=$DEFAULT_KUBECONFIG
+    kubectx $FILTERED_CONTEXT_NAMES
+  fi
+
 }
 
 # Select default cluster
