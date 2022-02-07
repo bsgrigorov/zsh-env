@@ -1,0 +1,28 @@
+Conditional Operators
+In the examples above, we implemented conditional operators such as -eq (equal to) and -gt (greater than). ZSH supports other conditional operators such as:
+
+a -eq b – True if a is numerically equal to b
+a -gt b – True if a is numerically greater than b
+a -lt b – True if a is numerically less than b
+a -ne b – True is a is not numerically equal to b
+a -le b – True if a is numerically less than or equal to b
+a -ge b – True if a is numerically greater than or equal to b
+a != b – True if the string a is not equal to string b
+a = b – True if string a is equal to string b
+-z STRING – True if the length of the string is zero
+-n STRING – True if the length of the string is non-zero
+-a FILE – True if the file exists
+-h FILE – True if the file exists and is a symbolic link
+-f FILE – True if the file exists and is a regular file (not a directory or special file)
+-d FILE – True if the file exists and is a directory
+-e FILE – True if the file exists regardless of the type
+-r FILE – True if the file exists and is readable by the current process
+-w FILE – True if the file exists and is writeable by the current process
+-x FILE – True if the file exists and is executable by the current process
+-g FILE – True if file exists and has setgid bit set
+-s FILE – True if file exists and size is greater than zero
+-u – True if file exists and has setuid bit set
+-o FILE – True if file exists and is owned by the current ID
+! EXP – True if the expression is false
+a && b – True if both a and b are true
+a || b – True if either a or b is true
