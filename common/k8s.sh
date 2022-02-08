@@ -71,11 +71,11 @@ kt() {
 
 }
 
-ktx() {
-  echo $KUBECONFIG
-  # kubectx "$@"
-  kubectx
-}
+# ktx() {
+#   echo $KUBECONFIG
+#   # kubectx "$@"
+#   kubectx
+# }
 
 # Select default cluster
 kubectx shoot--eureka--black

@@ -8,7 +8,7 @@ source $ZSHENV/common/functions.sh
 source $ZSHENV/common/git.sh
 source $ZSHENV/common/k8s.sh
 
-# Programs
+## Programs
 export PYTHON2_EXE=/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/home
 export BASH_SILENCE_DEPRECATION_WARNING=1
@@ -16,6 +16,7 @@ export BASH_SILENCE_DEPRECATION_WARNING=1
 ln -sfn ~/Development/Repos/home/BrewUp/brewup.sh /usr/local/bin/brewup
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
+## Bindkeys
 # bind '"\C-r": "\C-a hstr -- \C-j"' # bash
 # set ctrl + r for hstr instead of reverse search
 bindkey -s "\C-r" "\C-a hstr -- \C-j"
