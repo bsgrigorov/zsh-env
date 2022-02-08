@@ -20,10 +20,13 @@ parse_git_branch() {
 # }
 # \[\033[31m\]$(parse_git_files_diff)
 
+
+# Use F{colorname} for default colors like red, greem, cyan, blue, magenta, black, white, yellow
+# Use $FG[021] for custom codes. Get the code from 'spectrum_ls'
 NEWLINE=$'\n'
 export PS1="%F{yellow}%~%f"
 export PS1='$(kube_ps1):${NEWLINE}'$PS1
-export PS1=$PS1"%F{green} \$(parse_git_branch)%f${NEWLINE}\$ "
+export PS1=$PS1"$FG[099] \$(parse_git_branch)%f${NEWLINE}\$ "
 export RPROMPT="%F{250}%*%f"
 # export PROMPT=$PS1"\[\033[32m\]\$(parse_git_branch)\[\033[00m\]\n\$ "
 

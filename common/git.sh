@@ -51,12 +51,12 @@ vs() {
 }
 
 
-# _fzf_complete_vs() {
-#   echo yay
-#   _fzf_complete --multi --reverse --prompt="vs> " -- "$@" < <(
-#     echo very
-#     echo wow
-#     echo such
-#     echo doge
-#   )
-# }
+_fzf_complete_vs() {
+  _fzf_complete --multi --reverse --prompt="vs> " -- "$@" < <(
+    echo very
+    echo wow
+    echo such
+    echo doge
+  )
+}
+[ -n "$BASH" ] && complete -F _fzf_complete_vs -o default -o bashdefault vs

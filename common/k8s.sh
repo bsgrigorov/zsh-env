@@ -56,7 +56,6 @@ kt() {
   KUBECONFIG=$FILTERED_CONTEXTS
 
   IFS="$OIFS"
-  local choice
 
   FILTERED_CONTEXT_NAMES=$(k config get-contexts -o name)
   if [[ $FILTERED_CONTEXT_NAMES == *$'\n'* ]]; then
@@ -70,6 +69,12 @@ kt() {
     kubectx $FILTERED_CONTEXT_NAMES
   fi
 
+}
+
+ktx() {
+  echo $KUBECONFIG
+  # kubectx "$@"
+  kubectx
 }
 
 # Select default cluster

@@ -1,0 +1,16 @@
+shell
+
+Search command history
+Ctrl + R
+
+Search files in dir and subdirs
+Ctrl + T
+
+cd into folder from fzf
+Option + C
+
+Split terminal
+Ctrl + E
+
+Close current terminal tab
+Ctrl + W
