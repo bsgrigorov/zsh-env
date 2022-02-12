@@ -77,6 +77,8 @@ knsget() {
 
 alias kfwd='sudo -E kubefwd svc -n $(knsget)'
 
+alias ktxget='kubectl config view --minify --raw | pbcopy'
+
 # ktx() {
 #   echo $KUBECONFIG
 #   # kubectx "$@"
