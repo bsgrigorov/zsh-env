@@ -5,5 +5,7 @@ date
 
 # list crontabs - crontab -l
 # edit crontabs - crontab -e
+# Required before you can run it
+# sudo chown root:wheel ~/Development/Repos/home/zsh-env/tasks/daily.plist
 
-shallow-backup --new-path ~/Development/Repos/home/backup -backup-all 
+/usr/local/bin/shallow-backup --new-path ~/Development/Repos/home/backup -backup-all 

@@ -71,11 +71,26 @@ kt() {
 
 }
 
+knsget() {
+  k config view --minify --output 'jsonpath={..namespace}'; echo
+}
+
+alias kfwd='sudo -E kubefwd svc -n $(knsget)'
+
 # ktx() {
 #   echo $KUBECONFIG
 #   # kubectx "$@"
 #   kubectx
 # }
+
+
+
+
+
+
+
+
+
 
 # Select default cluster
 kubectx shoot--eureka--black

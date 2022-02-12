@@ -1,4 +1,4 @@
-shell
+# Shell
 
 Search command history
 Ctrl + R
@@ -7,10 +7,31 @@ Search files in dir and subdirs
 Ctrl + T
 
 cd into folder from fzf
-Option + C
+Opt + C
+
+
+
+# VSCode
+Close window
+Ctrl Shift W
+
+View Terminal
+Cmd S
 
 Split terminal
-Ctrl + E
+Cmd + E
 
 Close current terminal tab
-Ctrl + W
+Cmd W
+
+
+# General
+Switch between windows of the same application within a space
+Cmd `
+
+Switch between applications
+Cmd Tab
+
+Record text with area
+Cmd =
+
