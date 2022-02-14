@@ -75,7 +75,7 @@ knsget() {
   k config view --minify --output 'jsonpath={..namespace}'; echo
 }
 
-alias kfwd='sudo -E kubefwd svc -n $(knsget)'
+alias kfwd='sudo -E kubefwd svc -n $(knsget) | sed -E "s#(127.[0-9|.]+\ )#\1 http://#"'
 
 alias ktxget='kubectl config view --minify --raw | pbcopy'
 
