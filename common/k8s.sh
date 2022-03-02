@@ -37,13 +37,14 @@ kns() {
   if [ -z "$1" ]; then
     # kubectl get sa default -o jsonpath='{.metadata.namespace}'
     kubens
-    echo
+    export HELM_NAMESPACE=$(knsget)
   else
     kubectl config set-context --current --namespace $1
+    export HELM_NAMESPACE=$1
   fi
 }
 
-kt() {
+ktx() {
 
   OIFS="$IFS"
   IFS=$'*'
@@ -68,16 +69,28 @@ kt() {
     KUBECONFIG=$DEFAULT_KUBECONFIG
     kubectx $FILTERED_CONTEXT_NAMES
   fi
-
+  
+  export HELM_NAMESPACE=$(knsget)
 }
 
 knsget() {
   k config view --minify --output 'jsonpath={..namespace}'; echo
 }
 
+kt() {
+  kubectx
+  export HELM_NAMESPACE=$(knsget)
+}
+
 alias kfwd='sudo -E kubefwd svc -n $(knsget) | sed -E "s#(127.[0-9|.]+\ )#\1 http://#"'
 
 alias ktxget='kubectl config view --minify --raw | pbcopy'
+
+alias kd='kubectl describe'
+# alias ktx='kubectx'
+alias k='kubecolor'
+alias kk='kubectl'
+alias kc='kubecolor'
 
 # ktx() {
 #   echo $KUBECONFIG
@@ -96,3 +109,4 @@ alias ktxget='kubectl config view --minify --raw | pbcopy'
 
 # Select default cluster
 kubectx shoot--eureka--black
+export HELM_NAMESPACE=$(knsget)
