@@ -73,14 +73,21 @@ ktx() {
   export HELM_NAMESPACE=$(knsget)
 }
 
+compdef ktx=kubectx
+
 knsget() {
   k config view --minify --output 'jsonpath={..namespace}'; echo
 }
 
-kt() {
-  kubectx
-  export HELM_NAMESPACE=$(knsget)
-}
+# kt() {
+#   kubectx
+#   export HELM_NAMESPACE=$(knsget)
+# }
+
+alias kt=ktx
+
+source <(kubectl completion zsh)
+compdef kubecolor=kubectl
 
 alias kfwd='sudo -E kubefwd svc -n $(knsget) | sed -E "s#(127.[0-9|.]+\ )#\1 http://#"'
 
@@ -91,6 +98,7 @@ alias kd='kubectl describe'
 alias k='kubecolor'
 alias kk='kubectl'
 alias kc='kubecolor'
+
 
 # ktx() {
 #   echo $KUBECONFIG
