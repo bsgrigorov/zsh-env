@@ -28,6 +28,8 @@ bindkey '^V' vs
 # zle     -N   ktx
 # bindkey '^K' ktx
 
+[[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
+
 
 # git user global config settings
 export GIT_USER_NAME=Borislav Grigorov

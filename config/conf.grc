@@ -1,0 +1,45 @@
+## /usr/local/share/grc
+# Error Line
+regexp=^.*(ERROR|error|Error)(.*)$
+colours=bright_blue,red,red
+======
+# FATAL Line
+regexp=^.*(FATAL|fatal|Fatal)(.*)$
+colours=bright_blue,red,red
+======
+# Warn Line
+regexp=^.*(WARN|warn|Warn)(.*)$
+colours=bright_blue,yellow,default
+======
+# Info Line
+regexp=^.*(INFO|info|Info)(.*)$
+colours=bright_blue,cyan,default
+======
+# DEBUG Line
+regexp=^.*(DEBUG|debug|Debug)(.*)$
+colours=bright_blue,default,default
+======
+# IP
+regexp=\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}
+colours=bright_blue
+=======
+# HTTP verbs
+regexp=GET|POST|PUT|DELETE|PATCH|HEAD
+colours=green
+======
+# 2xx status
+regexp=\s\b2\d{2}\b\s
+colours=green
+======
+# 3xx status
+regexp=\s\b3\d{2}\b\s
+colours=yellow
+======
+# 4xx status
+regexp=\s\b4\d{2}\b\s
+colours=red
+======
+# 5xx status
+regexp=\s\b5\d{2}\b\s
+colours=red
+======
