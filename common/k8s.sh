@@ -84,6 +84,13 @@ kl() {
   # k logs $@ | perl -pe 's/^.*FATAL.*$/\e[1;37;41m$&\e[0m/g; s/^.*ERROR.*$/\e[1;31;40m$&\e[0m/g; s/^.*WARN.*$/\e[0;33;40m$&\e[0m/g; s/^.*INFO.*$/\e[0;36;40m$&\e[0m/g; s/^.*DEBUG.*$/\e[0;37;40m$&\e[0m/g'
   k logs $@ | grcat conf.b
 }
+ks() {
+  if [ -z "$1" ]; then
+    kubecolor get secrets
+  else
+    kubecolor view-secret $@
+  fi
+}
 
 # kt() {
 #   kubectx
