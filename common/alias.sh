@@ -17,12 +17,9 @@ alias python="python3"
 alias pip="pip3"
 alias neo="neo.sh"
 alias d="docker"
-alias k="kubectl"
-alias mk="minikube"
 alias dc="docker-compose"
 alias gs="git status"
 alias helm3="helm"
-alias prom="open http://localhost:8080 && k -n kube-system port-forward service/prometheus-prometheus 8080:80"
 alias ap="ansible-playbook"
 alias av="ansible-vault"
 alias tf="terraform"
@@ -30,4 +27,10 @@ alias is="istioctl"
 alias hs='history | grep'
 alias gc='gcmsg'
 alias eureka='code ~/Development/Repos/eureka'
+
+
+alias k="kubectl"
+alias mk="minikube"
+alias prom="open http://localhost:8080 && k -n kube-system port-forward service/prometheus-prometheus 8080:80"
+
 # alias kns='kubens'

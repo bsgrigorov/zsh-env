@@ -106,7 +106,7 @@ alias kfwd='sudo -E kubefwd svc -n $(knsget) | sed -E "s#(127.[0-9|.]+\ )#\1 htt
 
 alias ktxget='kubectl config view --minify --raw | pbcopy'
 
-alias kd='kubectl describe'
+alias kd='kubecolor describe'
 # alias ktx='kubectx'
 alias k='kubecolor'
 alias kk='kubectl'
