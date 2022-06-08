@@ -10,7 +10,7 @@ source $ZSHENV/common/k8s.sh
 
 ## Programs
 export PYTHON2_EXE=/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/jdk1.8.0_221.jdk/Contents/home
+export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
 ln -sfn ~/Development/Repos/home/BrewUp/brewup.sh /usr/local/bin/brewup
@@ -30,6 +30,8 @@ bindkey '^V' vs
 
 [[ -s "/etc/grc.zsh" ]] && source /etc/grc.zsh
 
+# Werf
+# ! { which werf | grep -qsE "^/Users/i853090/.trdl/"; } && [[ -x "$HOME/bin/trdl" ]] && source $("$HOME/bin/trdl" use werf "1.2" "stable")
 
 # git user global config settings
 export GIT_USER_NAME=Borislav Grigorov
