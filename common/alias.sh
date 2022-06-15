@@ -1,10 +1,10 @@
 # Aliases
 # alias sc="source ~/.bash_profile"
 alias sc="source ~/.zshrc"
-alias zenv="code ~/Development/Repos/home/zsh-env ~/.zshrc"
+alias zenv="code $DEVENV/home/zsh-env ~/.zshrc"
 alias zshenv="code ~/.zshrc"
 alias codebash="code ~/.bash_profile"
-alias dev="cd ~/Development/Repos"
+alias dev="cd $DEVENV"
 alias docs="cd ~/Documents"
 alias home="cd ~"
 alias ls='ls -GFhla'
@@ -26,7 +26,7 @@ alias tf="terraform"
 alias is="istioctl"
 alias hs='history | grep'
 alias gc='gcmsg'
-alias eureka='code ~/Development/Repos/eureka'
+alias coin="cd $DEVENV/coinbase"
 
 
 alias k="kubectl"

@@ -1,11 +1,12 @@
 #!/bin/bash
-export ZSHENV=~/Development/Repos/home/zsh-env
+export ZSHENV=~/dev/repos/home/zsh-env
+export DEVENV=~/dev/repos
 # ------------------------- ENVIRONMENT ----------------------------
 if [ -z "$PROFILE" ]; then
     export PROFILE=work
 fi
 if [ -z "$PROJECT" ]; then
-    export PROJECT=eureka
+    export PROJECT=coinbase
 fi
 if [ -z "$ENV" ]; then
     export ENV=dev

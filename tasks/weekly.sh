@@ -9,4 +9,4 @@ date
 # sh /Users/i853090/Development/Repos/home/BrewUp/brewup.sh
 brewup
 
-shallow-backup --new-path ~/Development/Repos/home/backup -backup-all 
+shallow-backup --new-path ~/dev/repos/home/backup -backup-all 

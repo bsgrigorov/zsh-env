@@ -6,4 +6,4 @@ date
 # list crontabs - crontab -l
 # edit crontabs - crontab -e
 
-# shallow-backup --new-path ~/Development/Repos/home/backup -backup-all 
+# shallow-backup --new-path $DEVENV/home/backup -backup-all 

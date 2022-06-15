@@ -13,7 +13,7 @@ export PYTHON2_EXE=/Library/Frameworks/Python.framework/Versions/2.7/bin/python2
 export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-ln -sfn ~/Development/Repos/home/BrewUp/brewup.sh /usr/local/bin/brewup
+ln -sfn $DEVENV/home/BrewUp/brewup.sh /usr/local/bin/brewup
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## Bindkeys

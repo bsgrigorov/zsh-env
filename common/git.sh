@@ -16,7 +16,7 @@ vs() {
 
   ARG_STR="*$**"
   WORKSPACES_ARG_STR="*$**.code-workspace"
-  REPO_LOCATION=~/Development/Repos/
+  REPO_LOCATION=$DEVENV
 
   WORKSPACES=$(find $REPO_LOCATION -name ${WORKSPACES_ARG_STR} -prune -maxdepth 3 )
   if [[ -n "$WORKSPACES" && -n $1 ]]; then

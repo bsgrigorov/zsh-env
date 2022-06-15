@@ -129,5 +129,5 @@ alias kc='kubecolor'
 
 
 # Select default cluster
-kubectx shoot--eureka--black
+kubectx docker-desktop
 export HELM_NAMESPACE=$(knsget)
