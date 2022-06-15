@@ -37,3 +37,7 @@ bindkey '^V' vs
 export GIT_USER_NAME=Borislav Grigorov
 
 PROMPT_EOL_MARK='' # removes % sign from output of commands https://unix.stackexchange.com/questions/167582/why-zsh-ends-a-line-with-a-highlighted-percent-symbol 
+
+if [ $(pwd) = "/" ]; then
+    cd $DEVENV
+fi
