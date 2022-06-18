@@ -35,3 +35,19 @@ Cmd Tab
 Record text with area
 Cmd =
 
+View text clipboard snippets Ctrl + Opt + C
+
+
+
+
+# Window snapping
+Snap to left/right
+Ctrl + Cmd + Left/Right 
+
+Snap to full screen
+Ctrl + Cmd + Up 
+
+Snap to next full screen
+Ctrl + Cmd + Down
+
+
