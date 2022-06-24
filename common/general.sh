@@ -9,11 +9,11 @@ source $ZSHENV/common/git.sh
 source $ZSHENV/common/k8s.sh
 
 ## Programs
-export PYTHON2_EXE=/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7
-export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
+# export PYTHON2_EXE=/Library/Frameworks/Python.framework/Versions/2.7/bin/python2.7
+# export JAVA_HOME=/Library/Java/JavaVirtualMachines/openjdk.jdk/Contents/Home
 export BASH_SILENCE_DEPRECATION_WARNING=1
 
-ln -sfn $DEVENV/home/BrewUp/brewup.sh /usr/local/bin/brewup
+# ln -sfn $DEVENV/home/BrewUp/brewup.sh /usr/local/bin/brewup
 source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
 
 ## Bindkeys

@@ -1,15 +1,19 @@
 # PATH
-export PATH=$PATH:/Applications/sap/hdbclient/
-export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/2.7/bin
-export PATH=$PATH:/Library/Frameworks/Python.framework/Versions/3.7/bin
-export PATH=$PATH:$HOME/Software/neo-java-web-sdk-3.88.14/tools/
-export PATH=$PATH:$HOME/Software/apache-maven-3.6.2/bin/
-export PATH=$PATH:$HOME/Software/
-export PATH=$PATH:$HOME/Library/Python/3.9/bin
-export PATH=$PATH:/usr/local/bin/aws_completer
-export PATH="/usr/local/opt/helm@2/bin:$PATH"
-export PATH="/usr/local/opt/openssl@1.1/bin:$PATH"
-export PATH="/usr/local/opt/yq@3/bin:$PATH"
-export PATH="${KREW_ROOT:-$HOME/.krew}/bin:$PATH"
-export PATH="/usr/local/opt/openjdk/bin:$PATH"
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH
+pathadd() {
+    if [ -d "$1" ] && [[ ":$PATH:" != *":$1:"* ]]; then
+        PATH="${PATH:+"$PATH:"}$1"
+    fi
+}
+
+pathadd "/Library/Frameworks/Python.framework/Versions/3.7/bin"
+pathadd "$HOME/Software/"
+pathadd "$HOME/Library/Python/3.9/bin"
+pathadd "/usr/local/bin/aws_completer"
+pathadd "/usr/local/opt/helm@2/bin"
+pathadd "/usr/local/opt/openssl@1.1/bin"
+pathadd "/usr/local/opt/yq@3/bin"
+pathadd "${KREW_ROOT:-$HOME/.krew}/bin"
+pathadd "/usr/local/opt/openjdk/bin"
+pathadd "/usr/local/opt/gnu-sed/libexec/gnubin"
+pathadd "$HOME/bin"

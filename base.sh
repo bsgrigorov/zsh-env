@@ -6,7 +6,7 @@ if [ -z "$PROFILE" ]; then
     export PROFILE=work
 fi
 if [ -z "$PROJECT" ]; then
-    export PROJECT=coinbase
+    export PROJECT=bison
 fi
 if [ -z "$ENV" ]; then
     export ENV=dev

@@ -12,7 +12,7 @@ ktx cluster-name # find and select clustername
 kns namespace # find and select namespace for your cluster
 
 ```
- 
+
 
 Install brew
 install oh-my-zsh

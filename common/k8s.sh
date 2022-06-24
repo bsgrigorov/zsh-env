@@ -1,35 +1,35 @@
-# used code from https://nikgrozev.com/2019/10/03/switch-between-multiple-kubernetes-clusters-with-ease/
-# Set the default kube context if present
-DEFAULT_KUBE_CONTEXTS="$HOME/.kube/config"
-if test -f "${DEFAULT_KUBE_CONTEXTS}"
-then
-  export KUBECONFIG="$DEFAULT_KUBE_CONTEXTS"
-fi
+# # used code from https://nikgrozev.com/2019/10/03/switch-between-multiple-kubernetes-clusters-with-ease/
+# # Set the default kube context if present
+# DEFAULT_KUBE_CONTEXTS="$HOME/.kube/config"
+# if test -f "${DEFAULT_KUBE_CONTEXTS}"
+# then
+#   export KUBECONFIG="$DEFAULT_KUBE_CONTEXTS"
+# fi
 
-# Additional contexts to be added in a folder
-CUSTOM_KUBE_CONTEXTS="$ZSHENV/secret/kubeconfigs"
-mkdir -p "${CUSTOM_KUBE_CONTEXTS}"
+# # Additional contexts to be added in a folder
+# CUSTOM_KUBE_CONTEXTS="$ZSHENV/secret/kubeconfigs"
+# mkdir -p "${CUSTOM_KUBE_CONTEXTS}"
 
-OIFS="$IFS"
-IFS=$'\n'
-for contextFile in `find "${CUSTOM_KUBE_CONTEXTS}" -type f -name "*.yaml"`
-do
-  chmod 600 $contextFile
-  export KUBECONFIG="$contextFile:$KUBECONFIG"
-done
-IFS="$OIFS"
+# OIFS="$IFS"
+# IFS=$'\n'
+# for contextFile in `find "${CUSTOM_KUBE_CONTEXTS}" -type f -name "*.yaml"`
+# do
+#   chmod 600 $contextFile
+#   export KUBECONFIG="$contextFile:$KUBECONFIG"
+# done
+# IFS="$OIFS"
 
 
 
-# Needed in order for kubectx to work independently in each terminal session
-export KUBECTXTTYCONFIG="${HOME}/.kube/tty/$(basename $(tty) 2>/dev/null || echo 'notty')"
-mkdir -p "$(dirname $KUBECTXTTYCONFIG)"
-export KUBECONFIG="${KUBECTXTTYCONFIG}:${KUBECONFIG}"
-cat <<EOF >${KUBECTXTTYCONFIG}
-apiVersion: v1
-kind: Config
-current-context: ""
-EOF
+# # Needed in order for kubectx to work independently in each terminal session
+# export KUBECTXTTYCONFIG="${HOME}/.kube/tty/$(basename $(tty) 2>/dev/null || echo 'notty')"
+# mkdir -p "$(dirname $KUBECTXTTYCONFIG)"
+# export KUBECONFIG="${KUBECTXTTYCONFIG}:${KUBECONFIG}"
+# cat <<EOF >${KUBECTXTTYCONFIG}
+# apiVersion: v1
+# kind: Config
+# current-context: ""
+# EOF
 
 
 # Required to speed up namespace setup. Lookups are not required
@@ -97,7 +97,7 @@ ks() {
 #   export HELM_NAMESPACE=$(knsget)
 # }
 
-alias kt=ktx
+# alias kt=ktx
 
 source <(kubectl completion zsh)
 compdef kubecolor=kubectl
@@ -129,5 +129,5 @@ alias kc='kubecolor'
 
 
 # Select default cluster
-kubectx docker-desktop
-export HELM_NAMESPACE=$(knsget)
+# kubectx docker-desktop
+# export HELM_NAMESPACE=$(knsget)

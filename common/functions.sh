@@ -12,15 +12,19 @@ docker_rm_stopped() {
 ka(){
   k apply -f $1
 }
-ke(){
+
+ke() {
   k exec -it $1 $2 $3 -- bash
 }
+
 kesh(){
   k exec -it $1 $2 $3 -- sh
 }
+
 kp() {
   k port-forward $1 $2:80
 }
+
 hu(){
   helm upgrade -i $1 .ci/charts/
 }
